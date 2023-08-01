@@ -13,13 +13,13 @@ public class ItemPanel {
 		int ch;
 		do {
 
-			System.out.println("................................ItemPanel.....................................");
-			System.out.println("1. Add Item");
-			System.out.println("2.Delete Item");
-			System.out.println("3.Update Item cost");
-			System.out.println("4. Display All Item");
-			System.out.println("5.Serach Item By Id");
-			System.out.println("6.Exit");
+			System.out.println(
+					"..................................................Item-Panel.............................................................................");
+			System.out.println(
+					"enter your choice...................................................................................................................");
+
+			System.out.println(
+					"1. Add Item\n2.Delete Item\n3.Update Item cost\n4.Display All Item\n5.Serach Item By Id\n6..Exit");
 
 			ch = sc.nextInt();
 			Item i = new Item();
@@ -56,14 +56,14 @@ public class ItemPanel {
 				did = sc.nextInt();
 				i = id.GetItemByID(did);
 				System.out.println(
-						".......................................................................................................");
+						".........................................................................................................................................................................");
 				if (i != null) {
 					System.out.println(i);
 				} else {
 					System.out.println(" no item with this id exist");
 				}
 				System.out.println(
-						".......................................................................................................");
+						".........................................................................................................................................................................");
 				break;
 
 			case 6:
@@ -73,10 +73,15 @@ public class ItemPanel {
 				System.out.println("invalid choice");
 
 			}
-			System.out.println("do you want to continue.............");
+			System.out.println(
+					"do you want to continue with Item panel.........................................................................");
+			System.out.println("if yes then press 1 ");
+			System.out.println("for exit press 6");
 			ch = sc.nextInt();
 
 		} while (ch != 6);
+		System.out.println(
+				"thank you for using Item panel...............................................................................................");
 
 	}
 

@@ -23,7 +23,7 @@ public class CustmorDaoImpl implements CustmorDao {
 
 	public CustmorDaoImpl() {
 		con = DBConnection.getConnect();
-		System.out.println("connection established...............................");
+//		System.out.println("connection established...............................");
 		try {
 			st = con.createStatement();
 		} catch (SQLException e) {

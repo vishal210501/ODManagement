@@ -14,13 +14,13 @@ public class OrderPanel {
 		int ch;
 		do {
 
-			System.out.println("................................OrderPanel.....................................");
-			System.out.println("1. AddOrder");
-			System.out.println("2.DeleteOrder");
-			System.out.println("3.Update Item Quantity");
-			System.out.println("4. Display AllOrder");
-			System.out.println("5.SerachOrder By Id");
-			System.out.println("6.Exit");
+			System.out.println(
+					".....................................................................OrderPanel.........................................................");
+			System.out.println(
+					"enter your choice...................................................................................................................");
+
+			System.out.println(
+					"1.AddOrder\n2.DeleteOrder\n3.Update Item Quantity\n4. Display AllOrder\n5.SerachOrder By Id\n6.Exit");
 
 			ch = sc.nextInt();
 			Order o = new Order();
@@ -35,12 +35,12 @@ public class OrderPanel {
 				o.setItem_id(sc.nextInt());
 				System.out.println("enter the quantity");
 				o.setQty(sc.nextInt());
-				System.out.println("enter the total cost");
-				o.setTotalCost(sc.nextFloat());
-			    System.out.println("enter order status");
-			    o.setOstatus(sc.next());
-			    System.out.println("enter PayStatus");
-			    o.setPayStatus(sc.next());
+//				System.out.println("enter the total cost");
+//				o.setTotalCost(sc.nextFloat());
+				System.out.println("enter order status");
+				o.setOstatus(sc.next());
+				System.out.println("enter PayStatus");
+				o.setPayStatus(sc.next());
 				od.AddOrder(o);
 				break;
 
@@ -51,7 +51,7 @@ public class OrderPanel {
 				break;
 
 			case 3:
-				System.out.println("enter the order to be updated");
+				System.out.println("enter the order id to be updated");
 				odid = sc.nextInt();
 				od.UpdateOrder(odid);
 
@@ -64,14 +64,14 @@ public class OrderPanel {
 				odid = sc.nextInt();
 				o = od.GetOrderByID(odid);
 				System.out.println(
-						".......................................................................................................");
+						".........................................................................................................................................................................");
 				if (o != null) {
 					System.out.println(o);
 				} else {
 					System.out.println(" no order with this id exist");
 				}
 				System.out.println(
-						".......................................................................................................");
+						".........................................................................................................................................................................");
 				break;
 
 			case 6:
@@ -81,11 +81,15 @@ public class OrderPanel {
 				System.out.println("invalid choice");
 
 			}
-			System.out.println("do you want to continue.............");
+			System.out.println(
+					"do you want to continue........................................................................................................");
+			System.out.println("if yes then press 1 ");
+			System.out.println("for exit press 6");
 			ch = sc.nextInt();
 
 		} while (ch != 6);
-
+		System.out.println(
+				"thank you for using Order panel.............................................................................................");
 	}
 
 }

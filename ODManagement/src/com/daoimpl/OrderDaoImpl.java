@@ -1,6 +1,7 @@
 package com.daoimpl;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -20,7 +21,7 @@ public class OrderDaoImpl implements OrderDao {
 
 	public OrderDaoImpl() {
 		con = DBConnection.getConnect();
-		System.out.println("connection done..............");
+//		System.out.println("connection done..............");
 		try {
 			st = con.createStatement();
 		} catch (Exception e) {
@@ -31,12 +32,27 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public void AddOrder(Order o) {
 		try {
+			st = con.createStatement();
+			float cost = 0;
+			ResultSet rs = st.executeQuery("select * from  item");
+			while (rs.next()) {
+				int id = rs.getInt(1);
+				if (o.getItem_id() == id) {
+					cost = rs.getFloat(3);
+//					System.out.println(cost);
+				}
+			}
+
 			pst = con.prepareStatement("insert into Orderdetails values(?,?,?,?,?,?,?)");
 			pst.setInt(1, o.getOid());
 			pst.setInt(2, o.getItem_id());
 			pst.setInt(3, o.getCid());
 			pst.setInt(4, o.getQty());
-			pst.setFloat(5, o.getTotalCost());
+
+			float Cost1 = o.getQty() * cost;
+//			System.out.println(Cost1);
+			pst.setFloat(5, Cost1);
+
 			pst.setString(6, o.getOstatus());
 			pst.setString(7, o.getPayStatus());
 
@@ -44,7 +60,8 @@ public class OrderDaoImpl implements OrderDao {
 			if (NoOfRowsAdded > 0) {
 				System.out.println("order added");
 			} else {
-				System.out.println("error....................");
+				System.out.println(
+						"error..................................................................................................................................");
 			}
 
 		} catch (Exception e) {
@@ -81,15 +98,17 @@ public class OrderDaoImpl implements OrderDao {
 				System.out.println(o);
 				System.out.println(
 						"............................................................................................");
-				System.out.println(" enter new cost item");
+				System.out.println(" enter new quantity of item");
 				int Qty = sc.nextInt();
-				pst = con.prepareStatement("update Orderdetails set Qty=? where order_id=?");
+
+				pst = con.prepareStatement("update Orderdetails set quantity=? where order_id=?");
 				pst.setInt(1, Qty);
 				pst.setInt(2, oid);
 
 				int NoOfRowsUpdated = pst.executeUpdate();
 				if (NoOfRowsUpdated > 0) {
 					System.out.println("new quantity is added");
+
 				} else {
 					System.out.println("error......");
 				}

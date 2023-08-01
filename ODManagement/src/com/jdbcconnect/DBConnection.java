@@ -14,9 +14,9 @@ public class DBConnection {
 	public static Connection getConnect() {
 		try {
 			Class.forName(JDBC_DRIVER);
-			System.out.println("driver loaded.........................................");
+//			System.out.println("driver loaded.........................................");
 			con = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-			System.out.println("connection done.........................................");
+//			System.out.println("connection done.........................................");
 		} catch (Exception e) {
 			System.out.println(e);
 		}

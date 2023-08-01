@@ -15,13 +15,13 @@ public class Order {
 
 	}
 
-	public Order(int oid, int cid, int item_id, int qty, float totalCost, String payStatus, String ostatus) {
+	public Order(int oid, int cid, int item_id, int qty, String payStatus, String ostatus) {
 		super();
 		Oid = oid;
 		Cid = cid;
 		Item_id = item_id;
 		Qty = qty;
-		TotalCost = totalCost;
+//		TotalCost = totalCost;
 		PayStatus = payStatus;
 		Ostatus = ostatus;
 	}

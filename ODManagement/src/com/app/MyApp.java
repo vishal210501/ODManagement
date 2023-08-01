@@ -9,18 +9,15 @@ public class MyApp {
 
 		int ch;
 		do {
-			System.out
-					.println(".......................................................................................");
-			System.out.println("........................Welcome To Management System.............................");
-			System.out
-					.println(".......................................................................................");
 
-			System.out.println("1. Item Panel");
-			System.out.println("2. Custmor Panel");
-			System.out.println("3.Order Panel");
-			System.out.println("4. Exit");
+			System.out.println(
+					"........................Welcome To Order Management System.................................................");
 
-			System.out.println("Enter your choice");
+			System.out.println(
+					"Enter your choice...................................................................................................................");
+
+			System.out.println("1.Item Panel\n2.Custmor Panel\n3.Order Panel\n4. Exit");
+
 			ch = sc.nextInt();
 			switch (ch) {
 			case 1:
@@ -40,7 +37,8 @@ public class MyApp {
 			}
 
 		} while (ch != 4);
-		System.out.println(" Thank you..........................................");
+		System.out.println(
+				"Thank you.....................................................................................................................................");
 
 	}
 

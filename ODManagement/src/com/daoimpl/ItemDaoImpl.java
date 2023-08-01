@@ -20,7 +20,7 @@ public class ItemDaoImpl implements ItemDao {
 
 	public ItemDaoImpl() {
 		con = DBConnection.getConnect();
-		System.out.println("connection done.............................");
+//		System.out.println("connection done.............................");
 		try {
 			st = con.createStatement();
 		} catch (Exception e) {

@@ -14,8 +14,10 @@ public class CustmorPanel {
 		int ch;
 		do {
 
-			System.out.println("................................CustmorPanel.....................................");
-			System.out.println("enter your choice............");
+			System.out.println(
+					".....................................................Custmor-Panel....................................................................");
+			System.out.println(
+					"enter your choice...................................................................................................................");
 
 			System.out.println(
 					"1.Add Custmor\n2.DeleteCustmor\n3.Update Custmor mobile_number\n4. Display AllCustmor\n5.SerachCustmor By Id\n6.Exit");
@@ -62,14 +64,14 @@ public class CustmorPanel {
 				id = sc.nextInt();
 				c = cd.GetCustmorByID(id);
 				System.out.println(
-						".......................................................................................................");
+						".........................................................................................................................................................................");
 				if (c != null) {
 					System.out.println(c);
 				} else {
 					System.out.println(" no custmor with this id exist");
 				}
 				System.out.println(
-						".......................................................................................................");
+						".........................................................................................................................................................................");
 				break;
 
 			case 6:
@@ -79,10 +81,15 @@ public class CustmorPanel {
 				System.out.println("invalid choice");
 
 			}
-			System.out.println("do you want to continue.............");
+			System.out.println(
+					"do you want to continue with Custmor panel....................................................................");
+			System.out.println("if yes then press 1 ");
+			System.out.println("for exit press 6");
 			ch = sc.nextInt();
 
 		} while (ch != 6);
+		System.out.println(
+				"thank you for using Custmor panel.........................................................................................");
 
 	}
 
